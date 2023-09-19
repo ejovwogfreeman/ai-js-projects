@@ -77,3 +77,13 @@ form button {
 .todos .todo small {
   font-style: italic;
 }
+
+.blog {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.blog p {
+  text-align: justify;
+}
