@@ -52,3 +52,8 @@ function deleteTodo(id) {
   todoArr.splice(todoArr.indexOf(todoId, 1));
   displayTodo(todoArr);
 }
+
+// POST
+// PUT/PATCH
+// GET
+// DELETE
