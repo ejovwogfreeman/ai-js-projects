@@ -5,28 +5,33 @@ import Todos from "./components/Todos";
 import { useState } from "react";
 
 function App() {
-  const data = [
-    {
-      id: Math.random(),
-      text: "Study github",
-      date: "2022-10-12",
-    },
-    {
-      id: Math.random(),
-      text: "Buy Milk",
-      date: "2022-10-12",
-    },
-    {
-      id: Math.random(),
-      text: "Study Bootstrap",
-      date: "2022-10-12",
-    },
-  ];
-  const [todos, setTodos] = useState(data);
+  // const data = [
+  //   {
+  //     id: Math.random(),
+  //     text: "Study github",
+  //     date: "2022-10-12",
+  //   },
+  //   {
+  //     id: Math.random(),
+  //     text: "Buy Milk",
+  //     date: "2022-10-12",
+  //   },
+  //   {
+  //     id: Math.random(),
+  //     text: "Study Bootstrap",
+  //     date: "2022-10-12",
+  //   },
+  // ];
+
+  let localData = JSON.parse(localStorage.getItem("todos"));
+
+  const [todos, setTodos] = useState(localData ? localData : []);
 
   const addTodos = (todo) => {
     setTodos([todo, ...todos]);
   };
+
+  localStorage.setItem("todos", JSON.stringify(todos));
 
   const deleteTodos = (id) => {
     console.log(id);
